@@ -71,5 +71,5 @@ def who_win(team1,team2):
 #értékek megadása
 team1 = [team for team in teams_dict if team["full_name"] == "Brooklyn Nets"][0]
 team2 = [team for team in teams_dict if team["full_name"] == "Portland Trail Blazers"][0]
-date_time = datetime.datetime.strptime("MAY 24, 2021", "%b %d, %Y")
+date_time = datetime.datetime.strptime("MAR 23, 2021", "%b %d, %Y")
 who_win(team1,team2)
