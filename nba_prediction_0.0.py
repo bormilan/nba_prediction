@@ -12,7 +12,6 @@ teams_dict = teams.get_teams()
 from nba_api.stats.static import players
 players_dict = players.get_active_players()
 
-
 from nba_api.stats.endpoints import teamgamelog
 from nba_api.stats.endpoints import teamdashlineups
 from nba_api.stats.endpoints import playergamelog
@@ -66,10 +65,11 @@ def who_win(team1,team2):
     pts_team1 += np.sum([pts_of_player(player_id) for player_id in lineup1])
     pts_team2 += np.sum([pts_of_player(player_id) for player_id in lineup2])
     
-    print(pts_team1," - ",pts_team2)
+    print(f"{round(pts_team1 / (pts_team1 + pts_team2),3) * 100}%"," - ",f"{round((pts_team2) / (pts_team1 + pts_team2),3) * 100}%")
     print(team1["full_name"]," - ",team2["full_name"])
-    
-team1 = [team for team in teams_dict if team["full_name"] == "Miami Heat"][0]
-team2 = [team for team in teams_dict if team["full_name"] == "Chicago Bulls"][0]
-date_time = datetime.datetime.strptime("MAR 12, 2021", "%b %d, %Y")
+
+#értékek megadása
+team1 = [team for team in teams_dict if team["full_name"] == "Brooklyn Nets"][0]
+team2 = [team for team in teams_dict if team["full_name"] == "Portland Trail Blazers"][0]
+date_time = datetime.datetime.strptime("MAY 24, 2021", "%b %d, %Y")
 who_win(team1,team2)
