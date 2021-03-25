@@ -51,8 +51,6 @@ def pts_of_matchup(team1,team2):
 def who_win(team1,team2):
     lineup1 = teamdashlineups.TeamDashLineups(team_id=team1["id"]).get_normalized_dict()["Lineups"][0]["GROUP_ID"].strip("-").split("-")
     lineup2 = teamdashlineups.TeamDashLineups(team_id=team2["id"]).get_normalized_dict()["Lineups"][0]["GROUP_ID"].strip("-").split("-")
-    # print(teamdashlineups.TeamDashLineups(team_id=team1["id"]).get_normalized_dict()["Lineups"][0]["GROUP_NAME"])
-    # print(teamdashlineups.TeamDashLineups(team_id=team2["id"]).get_normalized_dict()["Lineups"][0]["GROUP_NAME"])
     #1
     pts_team1 = 0
     pts_team2 = 0
